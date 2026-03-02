@@ -27,8 +27,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* espaço entre emoji e texto */
+    gap: 10px;
     font-size: 2.3em;
+    animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px #fff, 0 0 40px #ff4e8a; }
 }
 
 
@@ -70,4 +76,78 @@ button:hover {
 @keyframes cair {
     0% { transform: translateY(-100vh) rotate(0); }
     100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.creditos {
+    margin-top: 25px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.creditos a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.creditos a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    opacity:
+}
+
+.cordao {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* espalha uniforme */
+    align-items: flex-start;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.fio {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.7);
+    z-index: 1; /* fica atrás */
+}
+
+.polaroid {
+    position: relative;
+    z-index: 2; /* fica na frente do fio */
+    
+    width: 120px;
+    height: 160px;
+    background: white;
+    padding: 8px 8px 25px 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* deixa todas proporcionais */
+}
+
+.polaroid:hover {
+    transform: scale(1.08);
+}
+
+@keyframes balancar {
+    from { transform: rotate(var(--rot)) translateY(0px); }
+    to { transform: rotate(var(--rot)) translateY(10px); }
 }
