@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     color: white;
     text-align: center;
@@ -157,13 +157,39 @@ small {
 @media (max-width: 900px) {
 
     .layout {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
     }
 
-    .fotos {
+    
+    .esquerda,
+    .direita {
+        display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    
+    .direita {
+        order: -1;
+    }
+
+   
+    .polaroid {
+        width: 90px;
+        transform: rotate(0deg) !important;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 95%;
+        margin: 0;
     }
 
 }
